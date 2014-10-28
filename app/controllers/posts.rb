@@ -39,7 +39,7 @@ post '/edit/:id' do
   	tag_obj = Tag.where(name: tag)[0]
   	post.tags << tag_obj
 	end
-	redirect "post/#{post.id}"
+	redirect "posts/#{post.id}"
 end
 
 delete '/post/:id' do
