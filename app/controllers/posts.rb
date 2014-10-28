@@ -7,7 +7,7 @@ post '/newpost' do
   # Look in app/views/index.erb
   tags = params[:post].delete("tags")
 	post = Post.create(params[:post])
-  tags = tags.delete(" ").split(",")
+  tags = tags.delete(" ").downcase.split(",")
   tags.each do |tag|
   	Tag.create(name: tag)
   	tag_obj = Tag.where(name: tag)[0]
